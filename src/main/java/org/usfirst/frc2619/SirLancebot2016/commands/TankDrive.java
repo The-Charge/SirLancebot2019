@@ -25,6 +25,7 @@ public class TankDrive extends DriveBase {
 		double leftspeed = MathUtil.deadbandCheck(Robot.oi.leftJoystick.getY(),
 				super.deadbandY);
 		leftspeed = MathUtil.delinearize(leftspeed, power);
+		//Test this code after June Demos and if still doesn't work, comment out the above line. If it still doesn't work, try different powers in drive base
 		leftspeed *= -1;
 
 		return leftspeed;
@@ -34,6 +35,7 @@ public class TankDrive extends DriveBase {
 		double rightspeed = MathUtil.deadbandCheck(
 				Robot.oi.rightJoystick.getY(), super.deadbandY);
 		rightspeed = MathUtil.delinearize(rightspeed, power);
+		//Test this code after June Demos and if still doesn't work, comment out the above line. If it still doesn't work, try different powers in drive base
 		rightspeed *= -1;
 
 		return rightspeed;
