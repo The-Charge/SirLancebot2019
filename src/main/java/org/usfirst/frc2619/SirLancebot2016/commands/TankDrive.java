@@ -3,11 +3,15 @@ package org.usfirst.frc2619.SirLancebot2016.commands;
 import org.usfirst.frc2619.MathUtil;
 import org.usfirst.frc2619.SirLancebot2016.Robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  */
 public class TankDrive extends DriveBase {
 
+	public double speedMode;
+	
 	public TankDrive() {
 		super();
 		// Use requires() here to declare subsystem dependencies
@@ -26,7 +30,7 @@ public class TankDrive extends DriveBase {
 				super.deadbandY);
 		leftspeed = MathUtil.delinearize(leftspeed, power);
 		//Test this code after June Demos and if still doesn't work, comment out the above line. If it still doesn't work, try different powers in drive base
-		leftspeed *= -1;
+		leftspeed *= -1*Robot.driveTrain.speedMode;
 
 		return leftspeed;
 	}
@@ -36,8 +40,10 @@ public class TankDrive extends DriveBase {
 				Robot.oi.rightJoystick.getY(), super.deadbandY);
 		rightspeed = MathUtil.delinearize(rightspeed, power);
 		//Test this code after June Demos and if still doesn't work, comment out the above line. If it still doesn't work, try different powers in drive base
-		rightspeed *= -1;
+		rightspeed *= -1*Robot.driveTrain.speedMode;
 
 		return rightspeed;
 	}
+
+	
 }

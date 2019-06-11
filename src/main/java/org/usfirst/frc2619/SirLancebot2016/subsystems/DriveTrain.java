@@ -73,6 +73,8 @@ public class DriveTrain extends Subsystem {
 	private static double AimAngleSpeed = DEFAULT_AIM_ANGLE_SPEED;
 	private static double DistanceGain = DISTANCE_GAIN;
 	private static double AngleGain = ANGLE_GAIN;
+
+	public double speedMode = 1;
 	
 
 	// Put methods for controlling this subsystem
@@ -443,4 +445,16 @@ public class DriveTrain extends Subsystem {
 		TheChargeDashboard.putNumber("AimAngleGain", AngleGain);
 	}
 
+	public void fullSpeedMode()
+	{
+		 speedMode = 1;
+	}
+	public void halfSpeedMode()
+	{
+		 speedMode = 0.5;
+	}
+	public void quarterSpeedMode()
+	{
+		 speedMode = 0.25;
+	}
 }
