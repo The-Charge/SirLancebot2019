@@ -51,13 +51,13 @@ public abstract class DriveBase extends Command {
 		//Robot.driveTrain.writeDashboardDebugValues();
 		Robot.driveTrain.readAndWriteAutoTuningConstants();
 
-		currentControlMode = (ControlMode) Robot.oi.loopMode.getSelected();
+		//currentControlMode = (ControlMode) Robot.oi.loopMode.getSelected();
 
-		if (currentControlMode == ControlMode.Velocity) {
-			Robot.driveTrain.initSpeedPercentageMode();
-		} else {
+		//if (currentControlMode == ControlMode.Velocity) {
+		//	Robot.driveTrain.initSpeedPercentageMode();
+		//} else {
 			Robot.driveTrain.initPercentVBusMode();
-		}
+		//}
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -71,20 +71,22 @@ public abstract class DriveBase extends Command {
 		double leftspeed = getLeft();
 		double rightspeed = getRight();
 
-		if (currentControlMode == ControlMode.Velocity) {
-			Robot.driveTrain.setLeftSpeedPercentage(leftspeed);
-			Robot.driveTrain.setRightSpeedPercentage(rightspeed);
-		} else {
+		//if (currentControlMode == ControlMode.Velocity) {
+		//	Robot.driveTrain.setLeftSpeedPercentage(leftspeed);
+		//	Robot.driveTrain.setRightSpeedPercentage(rightspeed);
+		//} else {
 			Robot.driveTrain.setLeftPercentVBus(leftspeed);
 			Robot.driveTrain.setRightPercentVBus(rightspeed);
-		}
+		//}
 
 		//Robot.driveTrain.writeDashboardDebugValues();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return  Robot.oi.loopMode.getSelected() != currentControlMode;
+		//return  Robot.oi.loopMode.getSelected() != currentControlMode;
+		end();
+		return true;
 	}
 
 	// Called once after isFinished returns true

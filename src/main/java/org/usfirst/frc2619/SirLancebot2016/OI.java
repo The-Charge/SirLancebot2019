@@ -183,7 +183,8 @@ public class OI {
 		//loopMode.addObject("ClosedLoop",
 		//		CANTalon.TalonControlMode.Speed.getValue());
 
-		SmartDashboard.putData("Loop Mode", loopMode);
+        
+		//SmartDashboard.putData("Loop Mode", loopMode);
 
 		// Testing Auton Sendable Chooser
 		//autonCommand = new SendableChooser();
@@ -192,7 +193,7 @@ public class OI {
 		//autonCommand.addObject("CrossChevalDeFrise()",
 				//new CrossChevalDeFriseCG());
 
-		SmartDashboard.putData("AutonCommand", autonCommand);
+		//SmartDashboard.putData("AutonCommand", autonCommand);
 
 		// Positions for the Autonomous Sendable Chooser:
 		/*
