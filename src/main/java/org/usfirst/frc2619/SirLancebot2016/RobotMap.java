@@ -112,11 +112,13 @@ public class RobotMap {
 		// setting all the other motors to follower mode to follow the front two
 		// motors
 		// Right
-		driveTrainRightRearMotor.set(ControlMode.Follower, driveTrainRightFrontMotor.getDeviceID());
+        //driveTrainRightRearMotor.set(ControlMode.Follower, driveTrainRightFrontMotor.getDeviceID());
+        driveTrainRightFrontMotor.set(ControlMode.Follower, driveTrainRightRearMotor.getDeviceID());
 		//driveTrainRightRearMotor.set(driveTrainRightFrontMotor.getDeviceID());
 
 		// Left
-		driveTrainLeftRearMotor.set(ControlMode.Follower, driveTrainLeftFrontMotor.getDeviceID());
+        //driveTrainLeftRearMotor.set(ControlMode.Follower, driveTrainLeftFrontMotor.getDeviceID());
+        driveTrainLeftFrontMotor.set(ControlMode.Follower, driveTrainLeftRearMotor.getDeviceID());
 		//driveTrainLeftRearMotor.set(driveTrainLeftFrontMotor.getDeviceID());
 
 		// Invert motors

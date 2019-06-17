@@ -85,8 +85,9 @@ public abstract class DriveBase extends Command {
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
 		//return  Robot.oi.loopMode.getSelected() != currentControlMode;
-		end();
-		return true;
+		//end();
+		//return true;
+		return false;
 	}
 
 	// Called once after isFinished returns true

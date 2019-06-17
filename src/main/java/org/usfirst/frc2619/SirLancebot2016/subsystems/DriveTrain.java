@@ -141,11 +141,11 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public void setLeftPercentVBus(double percentvbus) {
-		leftFrontMotor.set(percentvbus);
+		leftRearMotor.set(percentvbus);
 	}
 
 	public void setRightPercentVBus(double percentvbus) {
-		rightFrontMotor.set(percentvbus);
+		rightRearMotor.set(percentvbus);
 	}
 
 	public void setLeftSpeedPercentage(double percentspeed) {
