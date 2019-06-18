@@ -142,10 +142,12 @@ public class DriveTrain extends Subsystem {
 
 	public void setLeftPercentVBus(double percentvbus) {
 		leftRearMotor.set(percentvbus);
+		leftFrontMotor.set(percentvbus);
 	}
 
 	public void setRightPercentVBus(double percentvbus) {
 		rightRearMotor.set(percentvbus);
+		rightFrontMotor.set(percentvbus);
 	}
 
 	public void setLeftSpeedPercentage(double percentspeed) {
@@ -169,14 +171,29 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public void initPercentVBusMode() {
-		setControlMode(ControlMode.PercentOutput);
+		//setControlMode(ControlMode.PercentOutput);
 		readDashboardControlValues();
+		leftFrontMotor.set(ControlMode.PercentOutput, 0);
+		leftRearMotor.set(ControlMode.PercentOutput, 0);
+		rightFrontMotor.set(ControlMode.PercentOutput, 0);
+		rightRearMotor.set(ControlMode.PercentOutput, 0);
 
-		leftFrontMotor.configNominalOutputForward(1, RobotMap.TIMEOUT_MS);
-		rightFrontMotor.configNominalOutputForward(1, RobotMap.TIMEOUT_MS);
 		
-		leftFrontMotor.configNominalOutputReverse(-1, RobotMap.TIMEOUT_MS);
-		rightFrontMotor.configNominalOutputReverse(-1, RobotMap.TIMEOUT_MS);
+		 leftFrontMotor.configNominalOutputForward(0, RobotMap.TIMEOUT_MS);
+		rightFrontMotor.configNominalOutputForward(0, RobotMap.TIMEOUT_MS);
+		
+		leftFrontMotor.configNominalOutputReverse(0, RobotMap.TIMEOUT_MS);
+		rightFrontMotor.configNominalOutputReverse(0, RobotMap.TIMEOUT_MS);
+
+		leftRearMotor.configNominalOutputForward(0, RobotMap.TIMEOUT_MS);
+		rightRearMotor.configNominalOutputForward(0, RobotMap.TIMEOUT_MS);
+		
+		leftRearMotor.configNominalOutputReverse(0, RobotMap.TIMEOUT_MS);
+		rightRearMotor.configNominalOutputReverse(0, RobotMap.TIMEOUT_MS);
+		
+		
+		//leftFrontMotor.follow(leftRearMotor);
+		//rightFrontMotor.follow(rightRearMotor);
 	}
 
 	//public void initPositionMode() {

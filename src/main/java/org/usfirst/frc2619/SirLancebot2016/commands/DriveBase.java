@@ -57,6 +57,7 @@ public abstract class DriveBase extends Command {
 		//	Robot.driveTrain.initSpeedPercentageMode();
 		//} else {
 			Robot.driveTrain.initPercentVBusMode();
+			
 		//}
 	}
 
@@ -75,8 +76,8 @@ public abstract class DriveBase extends Command {
 		//	Robot.driveTrain.setLeftSpeedPercentage(leftspeed);
 		//	Robot.driveTrain.setRightSpeedPercentage(rightspeed);
 		//} else {
-			Robot.driveTrain.setLeftPercentVBus(leftspeed);
-			Robot.driveTrain.setRightPercentVBus(rightspeed);
+			Robot.driveTrain.setLeftPercentVBus(leftspeed*Robot.driveTrain.speedMode);
+			Robot.driveTrain.setRightPercentVBus(rightspeed*Robot.driveTrain.speedMode);
 		//}
 
 		//Robot.driveTrain.writeDashboardDebugValues();
