@@ -34,6 +34,12 @@ public class TankDrive extends DriveBase {
 
 		return leftspeed;
 		 */
+
+		 
+		if (Robot.oi.driveControl.getSelected().equals(1))
+		{
+			return MathUtil.adjSpeed(-Robot.oi.Xbox.getRawAxis(2));
+		}
 		return  MathUtil.adjSpeed( -Robot.oi.leftJoystick.getY());
 	}
 
@@ -47,6 +53,10 @@ public class TankDrive extends DriveBase {
 
 		return rightspeed;
 		*/
+		if (Robot.oi.driveControl.getSelected().equals(1))
+		{
+			return MathUtil.adjSpeed(-Robot.oi.Xbox.getRawAxis(5));
+		}
 		
 		return  MathUtil.adjSpeed( -Robot.oi.rightJoystick.getY());
 	}

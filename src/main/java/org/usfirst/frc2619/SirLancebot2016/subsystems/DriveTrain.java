@@ -86,6 +86,8 @@ public class DriveTrain extends Subsystem {
 		// Needed for Competition Bot,  comment out for plybot 
 		leftFrontMotor.setInverted(true);
 		rightFrontMotor.setInverted(true);
+
+		speedMode = (int)Robot.oi.driveSpeed.getSelected();
 	}
 
 	private void writeDefaultDashboardValues() {
