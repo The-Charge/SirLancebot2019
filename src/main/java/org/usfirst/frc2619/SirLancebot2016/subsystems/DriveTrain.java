@@ -87,7 +87,7 @@ public class DriveTrain extends Subsystem {
 		leftFrontMotor.setInverted(true);
 		rightFrontMotor.setInverted(true);
 
-		speedMode = (int)Robot.oi.driveSpeed.getSelected();
+		//speedMode = (double)Robot.oi.driveSpeed.getSelected();
 	}
 
 	private void writeDefaultDashboardValues() {
