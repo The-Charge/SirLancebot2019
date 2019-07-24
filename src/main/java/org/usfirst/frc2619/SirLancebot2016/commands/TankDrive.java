@@ -36,9 +36,9 @@ public class TankDrive extends DriveBase {
 		 */
 
 		 
-		if (Robot.oi.driveControl.getSelected().equals(1))
+		if (Robot.driveControl.getSelected().equals(1))
 		{
-			System.out.println("XBOX joystick working");
+			//System.out.println("XBOX joystick working");
 			return MathUtil.adjSpeed(-Robot.oi.xbox.getRawAxis(1));
 		}
 		return  MathUtil.adjSpeed( -Robot.oi.leftJoystick.getY());
@@ -54,7 +54,7 @@ public class TankDrive extends DriveBase {
 
 		return rightspeed;
 		*/
-		if (Robot.oi.driveControl.getSelected().equals(1))
+		if (Robot.driveControl.getSelected().equals(1))
 		{
 			return MathUtil.adjSpeed(-Robot.oi.xbox.getRawAxis(5));
 		}
