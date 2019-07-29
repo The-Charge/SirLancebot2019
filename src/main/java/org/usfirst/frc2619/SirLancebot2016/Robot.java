@@ -164,42 +164,6 @@ public class Robot extends IterativeRobot {
 			SmartDashboard.putString("ShooterPivot Command", Robot.shooterPivot
 					.getCurrentCommand().toString());
 		
-	
-		direction = Robot.oi.getDpad();
-		System.out.println(direction);
-		
-		if (direction != -2 && direction != -1){
-
-			if (direction == 0)
-			{
-			   
-			}
-
-			if (direction == 90)
-			{
-			System.out.print("Hello");
-			  if (Robot.shooterPivot.shooterUp)
-					System.out.print("Lower");
-					new LowerShooter();
-				else new LiftShooter();
-			} 
-
-			if (direction == 180)
-			{
-			   if (Robot.wrist.wristbool)
-					new WristDown();
-				else new WristUp();
-			}
-			if (direction == 270)
-			{
-			   if(Robot.arms.status)
-					new LowerArms();
-				else new LiftArms();
-			
-			}
-		}
-
-
 
 		}
 
